@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* CSS Document */
+h1 {
+    font-size: 80px;
+    color: #434343;
+    font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+    margin: 0;
+}
+@font-face {
+    font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+    src: url('fonts/hybridb.woff2') format('woff2'),
+         url('fonts/hybridb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+    src: url('fonts/theboldstreet.woff2') format('woff2'),
+         url('fonts/theboldstreet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Allgemeine Stile für das Layout */
+
+
+body {
+    font-family: 'Hybrid b', sans-serif;
+    line-height: 1;
+    font-weight: 100;
+    background-color: #FFFFFF;
+}
+
+header {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header .logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+header h1 {
+    margin-top: 50px; /* Platzierung des Titels */
+}
+
+main {
+    padding: 20px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.media {
+    position: relative;
+    overflow: hidden; /* Verhindert Überlaufen der Videos */
+    border-radius: 10px;
+}
+
+.media img,
+.media video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.media video {
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Media Queries für Responsive Design */
+@media (min-width: 769px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten auf Laptop-Größe */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr; /* Eine Spalte auf Handy-Größe */
+    }
+
+    header {
+        padding: 10px;
+    }
+    
+    header h1 {
+        margin-top: 20px;
+        font-size: 1.8rem;
+    }
+    
+    .project .media {
+        height: auto; /* Sorgt dafür, dass Videos in der Höhe angepasst werden */
+    }
+}
